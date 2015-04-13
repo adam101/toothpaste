@@ -1,0 +1,17 @@
+%h1 Patients
+
+= link_to 'New patient', new_patient_path
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Address
+    %th Email
+
+  - @patients.each do |patient|
+    %tr
+      %td= link_to patient.first_name, edit_patient_path(patient)
+      %td= patient.last_name
+      %td= patient.address
+      %td= patient.email
