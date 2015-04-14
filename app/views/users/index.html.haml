@@ -1,0 +1,19 @@
+%h1 Doctors
+
+= link_to 'New doctor', new_user_path
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Email
+    %th Doctor
+    %th Admin
+
+  - @users.each do |user|
+    %tr
+      %td= link_to user.first_name, edit_user_path(user)
+      %td= user.last_name
+      %td= user.email
+      %td= user.doctor
+      %td= user.admin
