@@ -1,0 +1,15 @@
+%h1 Treatment plans
+
+= link_to 'New treatment plan', new_treatment_plan_path
+
+%table
+  %tr
+    %th Title
+    %th Patient
+    %th Finished
+
+  - @treatment_plans.each do |treatment_plan|
+    %tr
+      %td= link_to treatment_plan.title, edit_treatment_path(treatment)
+      %td= treatment_plan.patient.try(:first_name)
+      %td= treatment_plan.finished?

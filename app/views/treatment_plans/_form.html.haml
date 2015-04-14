@@ -1,0 +1,9 @@
+= form_for @treatment_plan do |f|
+  = f.label :title
+  = f.text_field :title
+
+  - if @patients
+    = f.label :patient
+    = f.select :patient_id, @patients
+
+  = f.submit

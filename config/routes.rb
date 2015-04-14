@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :patients
   resources :users
+  resources :treatment_plans
   resources :treatments
 end

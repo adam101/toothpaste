@@ -5,4 +5,9 @@ class TreatmentPlan < ActiveRecord::Base
 
   ## Validations
   validates :title, presence: true
+
+  ## Instance methods
+  def finished?
+    !finished_at.nil?
+  end
 end
