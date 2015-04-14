@@ -1,0 +1,16 @@
+%h1 Treatments
+
+= link_to 'New treatment', new_treatment_path
+
+%table
+  %tr
+    %th Title
+    %th Price
+    %th Description
+
+  - @treatments.each do |treatment|
+    %tr
+      %td= link_to treatment.title, edit_treatment_path(treatment)
+      %td= treatment.title
+      %td= treatment.price
+      %td= treatment.description
