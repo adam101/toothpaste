@@ -7,11 +7,25 @@
     %th First name
     %th Last name
     %th Address
+    %th Zip
+    %th City
+    %th Birthday
+    %th Social Security Number
     %th Email
+    %th Phone number
+    %th Gender
+    %th Doctor
 
   - @patients.each do |patient|
     %tr
       %td= link_to patient.first_name, edit_patient_path(patient)
       %td= patient.last_name
       %td= patient.address
+      %td= patient.zip
+      %td= patient.city
+      %td= patient.birthday
+      %td= patient.social_security_number
       %td= patient.email
+      %td= patient.phone_number
+      %td= patient.gender
+      %td= patient.user.try(:first_name)

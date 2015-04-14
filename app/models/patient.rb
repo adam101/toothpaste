@@ -1,4 +1,7 @@
 class Patient < ActiveRecord::Base
+  ## Constants
+  VALID_GENDERS = %w( female male )
+
   ## Associations
   belongs_to :user
   has_many :xrays
