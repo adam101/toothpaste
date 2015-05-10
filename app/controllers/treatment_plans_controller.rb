@@ -13,6 +13,7 @@ class TreatmentPlansController < ApplicationController
   def create
     @patient        = Patient.find(params[:patient_id])
     @treatment_plan = @patient.treatment_plans.new(treatment_plan_params)
+    @treatments     = Treatment.all
 
     if @treatment_plan.save
       redirect_to patient_treatment_plans_path(@patient)
