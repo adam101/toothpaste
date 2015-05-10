@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150413183403) do
   add_index "treatment_plans", ["patient_id"], name: "index_treatment_plans_on_patient_id", using: :btree
 
   create_table "treatment_plans_treatments", force: :cascade do |t|
-    t.integer  "treatment_id",      null: false
     t.integer  "treatment_plan_id", null: false
+    t.integer  "treatment_id",      null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
