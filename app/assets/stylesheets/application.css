@@ -11,5 +11,25 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
  */
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.center-form {
+  display: block;
+  float: none;
+  margin: 0 auto;
+}
+
+.patient-details tr td:first-child {
+  color: #A8A8A8;
+  width: 200px;
+}

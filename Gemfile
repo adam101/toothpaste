@@ -11,8 +11,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'jquery-datatables-rails'
 
 gem 'devise', '~> 3.4'
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap_form', '~> 2.2'
 
 group :test do
   gem 'cucumber-rails', require: false

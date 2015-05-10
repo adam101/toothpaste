@@ -1,8 +1,8 @@
-= form_for @treatment do |f|
-  = f.label :title
+= bootstrap_form_for @treatment do |f|
   = f.text_field :title
 
-  = f.label :price
   = f.text_field :price
 
-  = f.submit
+  = f.text_area :description
+
+  = f.primary

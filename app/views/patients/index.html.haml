@@ -1,8 +1,8 @@
 %h1 Patients
 
-= link_to 'New patient', new_patient_path
+= link_to 'New patient', new_patient_path, class: 'btn btn-primary'
 
-%table
+%table.table.table-striped.table-bordered.data-table.margin-top
   %tr
     %th First name
     %th Last name
@@ -15,10 +15,11 @@
     %th Phone number
     %th Gender
     %th Doctor
+    %th Actions
 
   - @patients.each do |patient|
     %tr
-      %td= link_to patient.first_name, edit_patient_path(patient)
+      %td= link_to patient.first_name, patient_path(patient)
       %td= patient.last_name
       %td= patient.address
       %td= patient.zip
@@ -29,3 +30,11 @@
       %td= patient.phone_number
       %td= patient.gender
       %td= patient.user.try(:first_name)
+      %td
+        = link_to edit_patient_path(patient), class: 'btn btn-warning', title: 'Edit' do
+          %i.fa.fa-edit
+          Edit
+
+        = link_to new_patient_treatment_plan_path(patient), class: 'btn btn-primary', title: 'New treatment plan' do
+          %i.fa.fa-plus
+          Treatment plan

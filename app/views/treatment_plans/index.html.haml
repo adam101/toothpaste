@@ -1,6 +1,6 @@
-%h1 Treatment plans
+%h1 #{@patient.first_name} - Treatment plans
 
-= link_to 'New treatment plan', new_treatment_plan_path
+= link_to 'New treatment plan', new_patient_treatment_plan_path
 
 %table
   %tr
@@ -10,6 +10,6 @@
 
   - @treatment_plans.each do |treatment_plan|
     %tr
-      %td= link_to treatment_plan.title, edit_treatment_path(treatment)
+      %td= link_to treatment_plan.title, edit_treatment_plan_path(treatment_plan)
       %td= treatment_plan.patient.try(:first_name)
       %td= treatment_plan.finished?

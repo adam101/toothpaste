@@ -1,0 +1,57 @@
+.container
+  .row
+    .col-md-8.center-form
+      %h1 Patient - #{@patient.first_name} #{@patient.last_name}
+
+      %table.table.table-bordered.data-table.margin-top.patient-details
+        %tr
+          %td First name
+          %td= @patient.first_name
+        %tr
+          %td Last name
+          %td= @patient.last_name
+        %tr
+          %td Email
+          %td= @patient.email
+        %tr
+          %td Address
+          %td= @patient.address
+        %tr
+          %td City
+          %td= @patient.city
+        %tr
+          %td Zip
+          %td= @patient.zip
+        %tr
+          %td Birthday
+          %td= @patient.birthday
+        %tr
+          %td Social Security Number
+          %td= @patient.social_security_number
+        %tr
+          %td Gender
+          %td= @patient.gender
+        %tr
+          %td Doctor
+          %td= @patient.user.try(:first_name)
+
+      .btn-group.btn-group-justified
+        = link_to edit_patient_path(@patient), class: 'btn btn-default', title: 'Edit' do
+          %i.fa.fa-edit
+          Edit
+
+        = link_to new_patient_treatment_plan_path(@patient), class: 'btn btn-default', title: 'New treatment plan' do
+          %i.fa.fa-plus
+          Treatment plan
+
+        = link_to patient_treatment_plans_path(@patient), class: 'btn btn-default', title: 'Treatment plans' do
+          %i.fa.fa-inbox
+          Treatment plans
+
+        = link_to 'javascript:void(0)', class: 'btn btn-default', title: 'Appointments' do
+          %i.fa.fa-calendar
+          Appointments
+
+        = link_to 'javascript:void(0)', class: 'btn btn-default', title: 'New appointment' do
+          %i.fa.fa-plus
+          Appointment
