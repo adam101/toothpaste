@@ -28,3 +28,8 @@
   float: none;
   margin: 0 auto;
 }
+
+.patient-details tr td:first-child {
+  color: #A8A8A8;
+  width: 200px;
+}
