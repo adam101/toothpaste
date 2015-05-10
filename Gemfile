@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.4'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap_form', '~> 2.2'
 
 group :test do
   gem 'cucumber-rails', require: false

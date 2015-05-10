@@ -17,3 +17,13 @@
 .margin-top {
   margin-top: 20px;
 }
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.center-form {
+  display: block;
+  float: none;
+  margin: 0 auto;
+}

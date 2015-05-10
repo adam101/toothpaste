@@ -1,18 +1,21 @@
 class TreatmentPlansController < ApplicationController
   def index
-    @treatment_plans = TreatmentPlan.all
-    @patients        = Patient.pluck(:id, :first_name)
+    @patient         = Patient.find(params[:patient_id])
+    @treatment_plans = @patient.treatment_plans
   end
 
   def new
-    @treatment_plan = TreatmentPlan.new
+    @patient        = Patient.find(params[:patient_id])
+    @treatment_plan = @patient.treatment_plans.new
+    @treatments     = Treatment.all
   end
 
   def create
-    @treatment_plan = TreatmentPlan.new(treatment_plan_params)
+    @patient        = Patient.find(params[:patient_id])
+    @treatment_plan = @patient.treatment_plans.new(treatment_plan_params)
 
     if @treatment_plan.save
-      redirect_to treatment_plans_path
+      redirect_to patient_treatment_plans_path(@patient)
     else
       render 'new'
     end
@@ -24,9 +27,10 @@ class TreatmentPlansController < ApplicationController
 
   def update
     @treatment_plan = TreatmentPlan.find(params[:id])
+    @treatments     = Treatment.all
 
     if @treatment_plan.update(treatment_plan_params)
-      redirect_to treatment_plans_path
+      redirect_to patient_treatment_plans_path(@treatment_plan.patient)
     else
       render 'new'
     end
