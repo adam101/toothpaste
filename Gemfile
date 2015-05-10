@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.4'
+gem 'twitter-bootstrap-rails'
 
 group :test do
   gem 'cucumber-rails', require: false
