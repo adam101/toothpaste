@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20150413183403) do
 
   add_index "treatment_plans", ["patient_id"], name: "index_treatment_plans_on_patient_id", using: :btree
 
+  create_table "treatment_plans_treatments", force: :cascade do |t|
+    t.integer  "treatment_id",      null: false
+    t.integer  "treatment_plan_id", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "treatment_plans_treatments", ["treatment_id"], name: "index_treatment_plans_treatments_on_treatment_id", using: :btree
+  add_index "treatment_plans_treatments", ["treatment_plan_id"], name: "index_treatment_plans_treatments_on_treatment_plan_id", using: :btree
+
   create_table "treatments", force: :cascade do |t|
     t.string   "title",       null: false
     t.integer  "price",       null: false
@@ -63,19 +73,9 @@ ActiveRecord::Schema.define(version: 20150413183403) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "treatments_treatment_plans", force: :cascade do |t|
-    t.integer  "treatment_id",      null: false
-    t.integer  "treatment_plan_id", null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  add_index "treatments_treatment_plans", ["treatment_id"], name: "index_treatments_treatment_plans_on_treatment_id", using: :btree
-  add_index "treatments_treatment_plans", ["treatment_plan_id"], name: "index_treatments_treatment_plans_on_treatment_plan_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                              null: false
-    t.string   "encrypted_password"
+    t.string   "encrypted_password",                 null: false
     t.string   "first_name",                         null: false
     t.string   "last_name",                          null: false
     t.boolean  "doctor",             default: false
