@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  ## Devise
+  devise :database_authenticatable
+
   ## Associations
   has_many :patients
 
