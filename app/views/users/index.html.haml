@@ -1,14 +1,15 @@
 %h1 Doctors
 
-= link_to 'New doctor', new_user_path
+= link_to 'New doctor', new_user_path, class: 'btn btn-primary'
 
-%table
+%table.table.table-striped.table-bordered.dataTables.margin-top
   %tr
     %th First name
     %th Last name
     %th Email
     %th Doctor
     %th Admin
+    %th Actions
 
   - @users.each do |user|
     %tr
@@ -17,3 +18,6 @@
       %td= user.email
       %td= user.doctor
       %td= user.admin
+      %td
+        = link_to edit_user_path(user), class: 'btn btn-warning', title: 'Edit' do
+          %i.fa.fa-edit

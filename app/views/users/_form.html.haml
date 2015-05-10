@@ -1,17 +1,14 @@
-= form_for @user do |f|
-  = f.label :first_name
+= bootstrap_form_for @user do |f|
   = f.text_field :first_name
 
-  = f.label :last_name
   = f.text_field :last_name
 
-  = f.label :email
   = f.text_field :email
 
-  = f.label :doctor
   = f.check_box :doctor
 
-  = f.label :admin
   = f.check_box :admin
 
-  = f.submit
+  = f.primary
+
+  .margin-bottom
