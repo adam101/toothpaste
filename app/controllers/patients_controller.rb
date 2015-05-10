@@ -1,11 +1,15 @@
 class PatientsController < ApplicationController
   def index
     @patients = Patient.all
-    @doctors  = User.pluck(:first_name)
+  end
+
+  def show
+    @patient = Patient.find(params[:id])
   end
 
   def new
     @patient = Patient.new
+    @doctors = User.doctors.pluck(:first_name, :id)
   end
 
   def create
@@ -20,6 +24,7 @@ class PatientsController < ApplicationController
 
   def edit
     @patient = Patient.find(params[:id])
+    @doctors = User.doctors.pluck(:first_name, :id)
   end
 
   def update

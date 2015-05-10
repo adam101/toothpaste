@@ -1,9 +1,9 @@
-= form_for @treatment_plan do |f|
-  = f.label :title
+= bootstrap_form_for [@patient, @treatment_plan] do |f|
   = f.text_field :title
 
-  - if @patients
-    = f.label :patient
-    = f.select :patient_id, @patients
+  %h2 Treatments
+  .list-group
+    - @treatments.each do |treatment|
+      %a.list-group-item{ href: 'javascript:void(0)', data: { id: treatment.id } }= treatment.title
 
   = f.submit
