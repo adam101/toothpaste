@@ -31,10 +31,11 @@
       %td= patient.gender
       %td= patient.user.try(:first_name)
       %td
-        = link_to edit_patient_path(patient), class: 'btn btn-warning', title: 'Edit' do
-          %i.fa.fa-edit
-          Edit
+        - unless current_user.doctor
+          = link_to edit_patient_path(patient), class: 'btn btn-warning', title: 'Edit' do
+            %i.fa.fa-edit
+            Edit
 
-        = link_to new_patient_treatment_plan_path(patient), class: 'btn btn-primary', title: 'New treatment plan' do
-          %i.fa.fa-plus
-          Treatment plan
+          = link_to new_patient_treatment_plan_path(patient), class: 'btn btn-primary', title: 'New treatment plan' do
+            %i.fa.fa-plus
+            Treatment plan
