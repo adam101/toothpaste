@@ -1,0 +1,8 @@
+= bootstrap_form_for [@patient, @appointment] do |f|
+  = f.datetime_select :start_time
+
+  = f.datetime_select :end_time
+
+  = f.select :treatment_plan_id, @treatment_plans
+
+  = f.submit

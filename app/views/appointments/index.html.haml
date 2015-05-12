@@ -1,0 +1,3 @@
+%h1 #{@patient.first_name} - Appointments
+
+#calendar{ data: { :'events-url' => patient_appointments_path(@patient) } }

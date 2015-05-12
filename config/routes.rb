@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   resources :patients do
     resources :treatment_plans, shallow: true
+    resources :appointments,    shallow: true
   end
 
   resources :users
-  #resources :treatment_plans
   resources :treatments
+
+  get '/appointments', to: 'appointments#all'
 end
