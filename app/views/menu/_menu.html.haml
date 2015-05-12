@@ -15,7 +15,7 @@
         - unless current_user.doctor
           %li= link_to 'Doctors', users_path
           %li= link_to 'Treatments', treatments_path
-        %li= link_to 'Calendar', patients_path
+        %li= link_to 'Calendar', appointments_path
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}

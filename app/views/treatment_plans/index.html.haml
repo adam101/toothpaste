@@ -1,15 +1,16 @@
-%h1 #{@patient.first_name} - Treatment plans
+.container
+  .row
+    .col-md-6.center-form
+      %h1 #{@patient.first_name} - Treatment plans
 
-= link_to 'New treatment plan', new_patient_treatment_plan_path
+      %table.table.table-striped.table-bordered.data-table.margin-top
+        %tr
+          %th Title
+          %th Patient
+          %th Finished
 
-%table
-  %tr
-    %th Title
-    %th Patient
-    %th Finished
-
-  - @treatment_plans.each do |treatment_plan|
-    %tr
-      %td= link_to treatment_plan.title, edit_treatment_plan_path(treatment_plan)
-      %td= treatment_plan.patient.try(:first_name)
-      %td= treatment_plan.finished?
+        - @treatment_plans.each do |treatment_plan|
+          %tr
+            %td= link_to treatment_plan.title, treatment_plan_path(treatment_plan)
+            %td= treatment_plan.patient.try(:first_name)
+            %td= treatment_plan.finished?

@@ -16,6 +16,9 @@ gem 'jquery-datatables-rails'
 gem 'devise', '~> 3.4'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap_form', '~> 2.2'
+gem 'momentjs-rails', '~> 2.10.2'
+gem 'fullcalendar-rails', '~> 2.3.1'
+gem 'active_model_serializers', '~> 0.9.3'
 
 group :test do
   gem 'cucumber-rails', require: false
