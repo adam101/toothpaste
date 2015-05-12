@@ -6,6 +6,7 @@ class Patient < ActiveRecord::Base
   belongs_to :user
   has_many :xrays
   has_many :treatment_plans
+  has_many :appointments, through: :treatment_plans
 
   ## Validations
   validates :email,                   presence: true, uniqueness: true

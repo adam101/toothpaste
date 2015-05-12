@@ -17,3 +17,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require initialize_treatment_select
+//= require moment
+//= require fullcalendar
+//= require calendar

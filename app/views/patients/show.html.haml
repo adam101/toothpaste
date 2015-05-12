@@ -48,10 +48,10 @@
           %i.fa.fa-inbox
           Treatment plans
 
-        = link_to 'javascript:void(0)', class: 'btn btn-default', title: 'Appointments' do
+        = link_to patient_appointments_path(@patient), class: 'btn btn-default', title: 'Appointments' do
           %i.fa.fa-calendar
           Appointments
 
-        = link_to 'javascript:void(0)', class: 'btn btn-default', title: 'New appointment' do
+        = link_to new_patient_appointment_path(@patient), class: 'btn btn-default', title: 'New appointment' do
           %i.fa.fa-plus
           Appointment
