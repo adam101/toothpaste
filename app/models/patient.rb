@@ -18,4 +18,7 @@ class Patient < ActiveRecord::Base
   validates :social_security_number,  presence: true
   validates :phone_number,            presence: true
   validates :gender,                  presence: true
+
+  ## Scopes
+  scope :for_user, ->(user) { user.admin ? all : where(user_id: user.id) }
 end
