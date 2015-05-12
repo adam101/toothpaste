@@ -1,9 +1,9 @@
-
 doctor = User.create! email: 'kovacst@noreply.com', password: 'almafa123', first_name: 'Janos', last_name: 'Kovacs', doctor: true
 doctor2 = User.create! email: 'horvath@noreply.com', password: 'almafa123', first_name: 'Andras', last_name: 'Horvath', doctor: true
 User.create! email: 'martos@noreply.com', password: 'almafa123', first_name: 'Ida', last_name: 'Martos', doctor: true
 User.create! email: 'kozma@noreply.com', password: 'almafa123', first_name: 'Adam', last_name: 'Kozma', doctor: true
 User.create! email: 'admin@noreply.com', password: 'almafa123', first_name: 'Adam', last_name: 'Admin', admin: true
+User.create! email: 'assistant@noreply.com', password: 'almafa123', first_name: 'Edit', last_name: 'Nagy'
 
 patient1 = Patient.create! email: 'test0@noreply.com', first_name: 'Bela', last_name: 'Kovacs', zip: '1145', city: 'Budapest', social_security_number: '239471264', phone_number: '+36305632233', gender: 'M', birthday: '1990-12-10', address: 'Deak Ferenc ter', user: doctor
 patient2 =  Patient.create! email: 'test1@noreply.com', first_name: 'Andras', last_name: 'Szerdel', zip: '1145', city: 'Budapest', social_security_number: '239471264', phone_number: '+36305632233', gender: 'M', birthday: '1991-11-10', address: 'Deak Ferenc ter', user: doctor
@@ -31,12 +31,10 @@ TreatmentPlan.create! title: "Kezelesiterv 1", patient: patient2
 TreatmentPlan.create! title: "Kezelesiterv 2", patient: patient2
 TreatmentPlan.create! title: "Kezelesiterv 3", patient: patient2
 
-
 tp2 = TreatmentPlan.create! title: "Kezelesiterv 1", patient: patient3
 tp3 = TreatmentPlan.create! title: "Kezelesiterv 2", patient: patient3
 tp4 = TreatmentPlan.create! title: "Kezelesiterv 3", patient: patient4
 tp5 = TreatmentPlan.create! title: "Kezelesiterv 3", patient: patient5
-
 
 tp1.treatments = [t1, t2]
 tp1.save

@@ -1,4 +1,6 @@
 # language: hu
+
+@javascript
 Jellemző: Páciensek kezelése
 
   Forgatókönyv: Páciensek létrehozása

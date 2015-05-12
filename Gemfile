@@ -19,6 +19,7 @@ gem 'bootstrap_form', '~> 2.2'
 
 group :test do
   gem 'cucumber-rails', require: false
+  gem 'selenium-webdriver'
   gem 'database_cleaner'
 end
 

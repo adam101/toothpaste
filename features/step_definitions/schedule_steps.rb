@@ -1,9 +1,13 @@
 Amennyiben(/^asszisztensként vagyok bejelentkezve$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/users/sign_in'
+  fill_in 'user_email',    with: 'assistant@noreply.com'
+  fill_in 'user_password', with: 'almafa123'
+
+  click_button 'Log in'
 end
 
 Ha(/^egy páciens adatlapján vagyok$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/patients/1'
 end
 
 Ha(/^az új időpont felvétele gombra kattintok$/) do
@@ -19,10 +23,6 @@ Ha(/^kiválasztom az orvost$/) do
 end
 
 Akkor(/^az új időpontot a páciens adatlapján látnom kell$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Amennyiben(/^assisztensként vagyok bejelentkezve$/) do
   pending # express the regexp above with the code you wish you had
 end
 
@@ -55,7 +55,7 @@ Ha(/^átírom a dátumot$/) do
 end
 
 Ha(/^a mentés gombra kattintok$/) do
-  pending # express the regexp above with the code you wish you had
+  click_on 'commit'
 end
 
 Akkor(/^a foglalás oldalán az új időpontot kell látnom$/) do
