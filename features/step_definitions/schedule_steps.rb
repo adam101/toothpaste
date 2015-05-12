@@ -55,7 +55,7 @@ Ha(/^átírom a dátumot$/) do
 end
 
 Ha(/^a mentés gombra kattintok$/) do
-  click_on 'commit'
+  find('[name="commit"]').click
 end
 
 Akkor(/^a foglalás oldalán az új időpontot kell látnom$/) do

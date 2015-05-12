@@ -12,22 +12,22 @@ Ha(/^kitöltöm a páciens adatait$/) do
   fill_in 'patient_social_security_number', with: '123456789'
   fill_in 'patient_email',                  with: 'example@noreply.com'
   fill_in 'patient_phone_number',           with: '20/123-4567'
-  fill_in 'patient_gender',                 with: 'female'
-  select  'Ida',                            from: 'patient_user'
+  select  'female',                         from: 'patient_gender'
+  select  'Ida',                            from: 'patient_user_id'
 end
 
 Akkor(/^a páciens megjelenik a páciensek listájában$/) do
-  pending # express the regexp above with the code you wish you had
+  find('table').all('tr').last.all('td').first.text == 'First name'
 end
 
 Ha(/^a páciens módosítása gombra kattintok$/) do
-  pending # express the regexp above with the code you wish you had
+  find('table').all('tr').last.click_link 'Edit'
 end
 
 Ha(/^módosítom az adatait$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'patient_first_name', with: 'Modified first name'
 end
 
 Akkor(/^a páciens adatlapján az új adatokat kell látnom$/) do
-  pending # express the regexp above with the code you wish you had
+  find('table').all('tr').last.all('td').first.text == 'Modified first name'
 end
