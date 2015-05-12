@@ -2,18 +2,4 @@
 
 = link_to 'New treatment', new_treatment_path, class: 'btn btn-primary'
 
-%table.table.table-striped.table-bordered.data-table.margin-top
-  %tr
-    %th Title
-    %th Price
-    %th Description
-    %th Actions
-
-  - @treatments.each do |treatment|
-    %tr
-      %td= link_to treatment.title, edit_treatment_path(treatment)
-      %td= treatment.price
-      %td= treatment.description
-      %td
-        = link_to edit_treatment_path(treatment), class: 'btn btn-warning', title: 'Edit' do
-          %i.fa.fa-edit
+= render partial: 'table'

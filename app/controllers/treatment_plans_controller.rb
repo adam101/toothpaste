@@ -10,6 +10,11 @@ class TreatmentPlansController < ApplicationController
     @treatments     = Treatment.all
   end
 
+  def show
+    @treatment_plan = TreatmentPlan.find(params[:id])
+    @treatments     = @treatment_plan.treatments
+  end
+
   def create
     @patient        = Patient.find(params[:patient_id])
     @treatment_plan = @patient.treatment_plans.new(treatment_plan_params)
