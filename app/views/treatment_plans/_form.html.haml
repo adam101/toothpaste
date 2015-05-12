@@ -4,6 +4,8 @@
   %h2 Treatments
   .list-group
     - @treatments.each do |treatment|
-      %a.list-group-item{ href: 'javascript:void(0)', data: { id: treatment.id } }= treatment.title
+      %a.treatment.list-group-item{ href: 'javascript:void(0)', data: { id: treatment.id } }= treatment.title
+
+  = f.hidden_field :treatment_ids
 
   = f.submit
